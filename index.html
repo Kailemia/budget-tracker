@@ -1,57 +1,74 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budget Tracker</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Budget Tracker</h1>
-    </header>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main>
-        <section id="add-transaction">
-            <h2>Add Transaction</h2>
-            <form id="transaction-form">
-                <label for="description">Description:</label>
-                <input type="text" id="description" required>
-                <label for="amount">Amount:</label>
-                <input type="number" id="amount" step="0.01" required>
-                <div>
-                    <input type="radio" id="income" name="type" value="income" checked>
-                    <label for="income">Income</label>
-                    <input type="radio" id="expense" name="type" value="expense">
-                    <label for="expense">Expense</label>
-                </div>
-                <button type="submit">Add Transaction</button>
-            </form>
-        </section>
-        <section id="totals">
-            <h2>Totals</h2>
-            <p>Total Income: <span id="total-income">0.00</span></p>
-            <p>Total Expenses: <span id="total-expenses">0.00</span></p>
-            <p>Balance: <span id="balance">0.00</span></p>
-        </section>
-        <section id="filters">
-            <button id="filter-all">All</button>
-            <button id="filter-income">Income</button>
-            <button id="filter-expenses">Expenses</button>
-        </section>
-        <section id="transactions">
-            <h2>Transactions</h2>
-            <table id="transaction-table">
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                        <th>Amount</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="transaction-list"></tbody>
-            </table>
-        </section>
+      <header>
+        <div>
+          <h5>Total Balance</h5>
+          <span id="balance">$0.00</span>
+        </div>
+        <div>
+          <h5>Income</h5>
+          <span id="income">$0.00</span>
+        </div>
+        <div>
+          <h5>Expense</h5>
+          <span id="expense">$0.00</span>
+        </div>
+      </header>
+
+      <section>
+        <h3>Transactions</h3>
+        <ul id="transactionList" data-placeholder="No transactions."></ul>
+      </section>
+
+      <section>
+        <h3>Add Transaction</h3>
+
+        <form id="transactionForm">
+          <div>
+            <label for="type">
+              <input type="checkbox" name="type" id="type" checked />
+              <div class="option" data-option="Income">
+                <span>Expense</span>
+              </div>
+            </label>
+          </div>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div>
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              value="0"
+              min="0"
+              step="any"
+              inputmode="decimal"
+              id="amount"
+              required
+              onfocus="this.select()"
+            />
+          </div>
+          <div>
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" required />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </main>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
