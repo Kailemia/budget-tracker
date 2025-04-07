@@ -1,16 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/* Imports Poppins font from Google Fonts with weights 400, 500, and 600 */
 
 :root {
   --bg-color: #f6f8fa;
   --text-color: #1d1f27;
   --main-color: #3a3dbe;
 }
+/* Defines CSS variables for consistent colors */
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+/* Resets default padding, margin, and uses border-box for all elements */
 
 body {
   font-family: "Poppins", sans-serif;
@@ -20,11 +23,13 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* Sets base styles for body: font, background, text color, and full height */
 
 h3,
 header {
   margin-bottom: 0.5rem;
 }
+/* Adds spacing below headings and header */
 
 main {
   width: min(420px, 90%);
@@ -33,6 +38,7 @@ main {
   padding: 1rem;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
+/* Styles main container: max width 420px, centered, white background, shadow */
 
 header {
   background-color: var(--main-color);
@@ -43,6 +49,7 @@ header {
   display: flex;
   flex-wrap: wrap;
 }
+/* Styles header: blue background, white text, flexible layout */
 
 header div {
   padding: 5px;
@@ -65,12 +72,14 @@ header h5 {
   font-weight: 600;
   text-transform: uppercase;
 }
+/* Styles header divs: full-width balance, half-width income/expense, small uppercase h5 */
 
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
+/* Sets form as a 2-column grid with spacing */
 
 form input:not(#type),
 form button {
@@ -93,6 +102,7 @@ form button {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   grid-column: span 2;
 }
+/* Styles form inputs (except checkbox) and button: full-width, blue button spans both columns */
 
 form label {
   font-size: 0.75rem;
@@ -108,11 +118,13 @@ form div:nth-child(-n + 2) {
 form div:nth-child(n + 3) {
   flex-basis: calc(50% - 5px);
 }
+/* Styles form labels and divs: uppercase labels, first two divs span both columns */
 
 input#type {
   appearance: none;
   position: absolute;
 }
+/* Hides the checkbox visually while keeping it functional */
 
 .option {
   display: flex;
@@ -165,6 +177,7 @@ input#type:checked ~ .option span,
 input#type:not(:checked) ~ .option::before {
   color: #1d1f27;
 }
+/* Custom toggle switch for checkbox: green (income) to red (expense) with sliding indicator */
 
 input[type="date"] {
   appearance: none;
@@ -172,6 +185,7 @@ input[type="date"] {
   color: #1d1f27;
   text-align: start;
 }
+/* Styles date input for consistency */
 
 ul {
   list-style-type: none;
@@ -191,6 +205,7 @@ ul:empty {
 ul:empty::before {
   content: attr(data-placeholder);
 }
+/* Styles transaction list: scrollable, dashed border when empty with placeholder text */
 
 ul li {
   display: flex;
@@ -232,3 +247,4 @@ ul li:hover {
 .amount.expense {
   color: indianred;
 }
+/* Styles list items: flex layout, hover effect, income (green) and expense (red) colors */
